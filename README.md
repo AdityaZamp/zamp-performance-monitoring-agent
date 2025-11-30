@@ -398,9 +398,3 @@ Events stored before the fix may have NULL metrics. Either:
 1. Verify `SUPABASE_URL` and `SUPABASE_ANON_KEY` are set
 2. Run `supabase/schema.sql` in SQL Editor
 3. Check RLS policies allow access
-
----
-
-## License
-
-MIT
