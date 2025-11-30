@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
 import { runPerformanceAgent } from "@/lib/agent";
+import { NextRequest, NextResponse } from "next/server";
 
 // Set max duration for the cron job
 export const maxDuration = 120;
@@ -11,7 +11,7 @@ export async function GET(_request: NextRequest) {
 
   try {
     const result = await runPerformanceAgent(
-      "Check the drain status, fetch Web Vitals data from Vercel Drains. Thoroughly analyze all Core Web Vitals metrics (LCP, FCP, CLS, FID, TTFB, INP), compare them to Google's recommended thresholds, include slowest routes, and send a comprehensive daily performance summary to Slack. Include specific recommendations for any metrics that need improvement."
+      "last 24 hours performance insights report"
     );
 
     if (!result.success) {
@@ -46,4 +46,3 @@ export async function GET(_request: NextRequest) {
     );
   }
 }
-
